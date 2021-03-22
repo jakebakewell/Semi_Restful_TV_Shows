@@ -16,6 +16,13 @@
     <a href="/shows" class="btn btn-primary superman">Go Back</a>
     <h1 class="text-center mt-5 mb-5">Edit Show {{ show.id }}</h1>
     <div class="container">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <form action="/process_edit" method="post" class="d-flex flex-column">
             {% csrf_token %}
             <input type="hidden" name="show_id" value="{{ show.id }}">
