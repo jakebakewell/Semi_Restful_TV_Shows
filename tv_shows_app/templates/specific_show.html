@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific Show</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/specific_show_style.css' %}">
+</head>
+<body>
+    <a href="/shows" class="btn btn-primary superman">Go Back</a>
+    <h1 class="mt-5">TV Show {{ show.id }}</h1>
+    <h5>Title: {{ show.title }}</h5>
+    <h5>Network: {{ show.network }}</h5>
+    <h5>Release Date: {{ show.release_date }}</h5>
+    <h5>Description: {{ show.description }}</h5>
+    <h5 class="mt-5">Last Updated: {{ show.updated_at }}</h5>
+    <p><a href="/shows/{{ show.id }}/edit" class="btn btn-warning">Edit</a> | <a href="/shows/delete/{{ show.id }}" class="btn btn-danger">Delete</a></p>
+</body>
+</html>

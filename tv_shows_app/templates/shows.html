@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-5">All Shows</h1>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {% for shows in all_shows %}
+                <tr>
+                    <td>{{ shows.id }}</td>
+                    <td>{{ shows.title }}</td>
+                    <td>{{ shows.network }}</td>
+                    <td>{{ shows.release_date }}</td>
+                    <td><a href="/shows/{{ shows.id }}" class="btn btn-primary">Show</a> | <a href="/shows/{{ shows.id }}/edit" class="btn btn-warning">Edit</a> | <a href="/shows/delete/{{ shows.id }}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/shows/new" class="btn btn-primary">Add a New Show</a>
+    </div>
+</body>
+
+</html>

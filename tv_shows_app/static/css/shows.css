@@ -1,0 +1,24 @@
+.superman{
+    margin: -2rem 3rem 3rem 3rem;
+    float: right;
+}
+
+.batman{
+    margin: 5rem 0rem 5rem 30rem;
+}
+
+.container{
+    width: 70rem;
+}
+
+input{
+    margin-bottom: 3rem;
+}
+
+#network{
+    width: 20rem;
+}
+
+#release_date{
+    width: 20rem;
+}
